@@ -11,10 +11,10 @@
     constructs "^3.2.80"
     dedent-js "^1.0.1"
 
-"@types/node@^14.14.26":
-  version "14.14.26"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.26.tgz#e40df24c957568f350cca04e63bfb1e1556d1cbf"
-  integrity sha512-skWxepWOs+VArEBWd2S/VR3wUavioIIx9/HzW+UJiIjtwa6+kNXdsOeq7FfxDXf56hIcL0ieo2brwMgBJ1+lhw==
+"@types/node@^14.14.35":
+  version "14.14.35"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.35.tgz#42c953a4e2b18ab931f72477e7012172f4ffa313"
+  integrity sha512-Lt+wj8NVPx0zUmUwumiVXapmaLUcAk3yPuHCFVXras9k5VT9TdhJqKqGVUQCD60OTMCl0qxJ57OiTL0Mic3Iag==
 
 ansi-regex@^5.0.0:
   version "5.0.0"
@@ -78,6 +78,11 @@ constructs@^3.2.109, constructs@^3.2.80:
   version "3.3.11"
   resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.3.11.tgz#493793200bb5b38c815d38a9c115eb9054703187"
   integrity sha512-yis7ff0LPa1bgXBKKEU4BiS9sGCuRqCqHU6F12b2PnDurKQDMvy2meDzre15uaTf4mrxYmsezIGhiy9+GkIguw==
+
+constructs@^3.3.68:
+  version "3.3.68"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.3.68.tgz#a45cb52b708070a9fdafbe1e6cea2071d3fdfb06"
+  integrity sha512-Fq029KuZo16NdYqlSuK1loIDiR1P2WwxsihZjjeK9hM5qoFXjcAAzMI7i5Z1LxZwWl9cUoutBNXSvhF7xHUG7Q==
 
 dedent-js@^1.0.1:
   version "1.0.1"
@@ -163,10 +168,10 @@ ts-dedent@^2.0.0:
   resolved "https://registry.yarnpkg.com/ts-dedent/-/ts-dedent-2.0.0.tgz#47c5eb23d9096f3237cc413bc82d387d36dbe690"
   integrity sha512-DfxKjSFQfw9+uf7N9Cy8Ebx9fv5fquK4hZ6SD3Rzr+1jKP6AVA6H8+B5457ZpUs0JKsGpGqIevbpZ9DMQJDp1A==
 
-typescript@^4.1.5:
-  version "4.1.5"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.1.5.tgz#123a3b214aaff3be32926f0d8f1f6e704eb89a72"
-  integrity sha512-6OSu9PTIzmn9TCDiovULTnET6BgXtDYL4Gg4szY+cGsc3JP1dQL8qvE8kShTRx1NIw4Q9IBHlwODjkjWEtMUyA==
+typescript@^4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.3.tgz#39062d8019912d43726298f09493d598048c1ce3"
+  integrity sha512-qOcYwxaByStAWrBf4x0fibwZvMRG+r4cQoTjbPtUlrWjBHbmCAww1i448U0GJ+3cNNEtebDteo/cHOR3xJ4wEw==
 
 universalify@^0.1.0:
   version "0.1.2"
