@@ -53,11 +53,11 @@ export interface DockerPublishJobProps {
   cache?: boolean;
 
   /**
-   * If enabled, do not publish docker image to Docker Hub.
+   * If evaluates to true, do not publish docker image to Docker Hub.
    * Instead upload as an artifact.
    * @default false
    */
-  noPublish?: boolean;
+  noPublish?: boolean | string;
 }
 
 /**

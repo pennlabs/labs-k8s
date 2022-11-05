@@ -28,10 +28,10 @@ export interface LabsApplicationStackProps {
   frontendPath?: string;
 
   /**
-   * If true, run integration tests using docker-compose.
+   * If evaluates to true, run integration tests using docker-compose.
    * @default false
    */
-  integrationTests?: boolean;
+  integrationTests?: boolean | string;
 
   /**
    * Base name of the docker images to publish.
