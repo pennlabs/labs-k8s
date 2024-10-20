@@ -8,6 +8,7 @@ resource "kubernetes_config_map" "redis_config_map" {
     save 3600 30
     dir /redis-master-data/
     dbfilename dump.rdb
+    protected-mode no
     EOF
   }
 }
