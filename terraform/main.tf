@@ -55,6 +55,7 @@ locals {
     "penncoursealert.com",
     "penncourseplan.com",
     "penncoursereview.com",
+    "penndegreeplan.com",
     "penncourses.org",
     "pennlabs.org",
     "pennmobile.org",
