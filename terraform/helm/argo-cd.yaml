@@ -1,0 +1,20 @@
+server:
+  additionalApplications:
+  - name: labs-kube-manifests
+    namespace: argo-cd
+    project: default
+    source:
+      repoURL: https://github.com/pennlabs/kube-manifests.git
+      targetRevision: HEAD
+      path: .
+      directory:
+        recurse: true
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: default
+    syncPolicy:
+      syncOptions:
+      - CreateNamespace=true
+      automated:
+        prune: true
+        selfHeal: true

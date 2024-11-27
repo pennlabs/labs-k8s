@@ -40,6 +40,7 @@ module "production-cluster" {
     roleARN = module.iam-cert-manager.role-arn
   })]
   datadog_values = [file("helm/datadog.yaml")]
+  argo-cd_values = [file("helm/argo-cd.yaml")]
 }
 
 

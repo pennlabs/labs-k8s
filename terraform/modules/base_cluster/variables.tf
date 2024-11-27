@@ -27,3 +27,9 @@ variable "datadog_values" {
   description = "Values to provide to the Datadog helm chart"
   type        = list(string)
 }
+
+// Argo-cd values
+variable "argo-cd_values" {
+  description = "Values to provide to the Argo-cd helm chart"
+  type        = list(string)
+}

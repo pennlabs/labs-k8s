@@ -41,3 +41,9 @@ resource "github_actions_secret" "private_repos_aws_secret_key" {
   secret_name     = "GH_AWS_SECRET_ACCESS_KEY"
   plaintext_value = aws_iam_access_key.gh-actions.secret
 }
+
+// Ensure a kube-manifests repository exists for Argo deployments
+resource "github_repository" "kube_manifests_repository" {
+  name        = "kube-manifests"
+  description = "Kubernetes manifests for our cluster"
+}
