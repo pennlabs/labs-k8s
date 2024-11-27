@@ -17,6 +17,20 @@ Object {
           "uses": "actions/checkout@v2",
         },
         Object {
+          "name": "Checkout kube-manifests",
+          "uses": "actions/checkout@v2",
+          "with": Object {
+            "path": "kube-manifests",
+            "repository": "pennlabs/kube-manifests",
+            "token": "\${{ secrets.BOT_GITHUB_PAT }}",
+          },
+        },
+        Object {
+          "name": "Configure git",
+          "run": "git config --global user.name github-actions
+git config --global user.email github-actions[bot]@users.noreply.github.com\\"",
+        },
+        Object {
           "env": Object {
             "AWS_ACCOUNT_ID": "\${{ secrets.AWS_ACCOUNT_ID }}",
             "GIT_SHA": "\${{ github.sha }}",
@@ -36,6 +50,19 @@ echo \\"::set-output name=RELEASE_NAME::$RELEASE_NAME\\"
 yarn build",
         },
         Object {
+          "name": "Push to kube-manifests repository",
+          "run": "cd kube-manifests
+mkdir -p \${{ github.repository }}
+cp -r ../k8s/dist/ \${{ github.repository }}
+
+# get repo name from synth step
+RELEASE_NAME=\${{ steps.synth.outputs.RELEASE_NAME }}
+
+git add \${{ github.repository }}
+git commit -m \\"chore(k8s): deploy $RELEASE_NAME\\"
+git push",
+        },
+        Object {
           "env": Object {
             "AWS_ACCESS_KEY_ID": "\${{ secrets.GH_AWS_ACCESS_KEY_ID }}",
             "AWS_ACCOUNT_ID": "\${{ secrets.AWS_ACCOUNT_ID }}",
@@ -43,10 +70,8 @@ yarn build",
           },
           "name": "Deploy",
           "run": "aws eks --region us-east-1 update-kubeconfig --name production --role-arn arn:aws:iam::\${AWS_ACCOUNT_ID}:role/kubectl
-
 # get repo name from synth step
 RELEASE_NAME=\${{ steps.synth.outputs.RELEASE_NAME }}
-
 # Deploy
 kubectl apply -f k8s/dist/ -l app.kubernetes.io/component=certificate
 kubectl apply -f k8s/dist/ --prune -l app.kubernetes.io/part-of=$RELEASE_NAME",
